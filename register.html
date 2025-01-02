@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url("./images/bg.jpeg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 450px;
+      margin: 50px auto;
+      background-image: url("./images/img.jpeg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input[type="text"], input[type="email"], input[type="password"], input[type="file"] {
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px;
+      background-color: #121e12;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #2c652c;
+    }
+    .link {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .link a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    .link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Register</h1>
+    <form id="registerForm">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" required>
+      
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" required>
+      
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="password">Create Your Password</label>
+      <input type="password" id="password" name="password" required>
+      
+      <label for="resume">Upload Your Resume</label>
+      <input type="file" id="resume" name="resume" required>
+      
+      <button type="submit">Register</button>
+    </form>
+    
+    <div class="link">
+      <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+  </div>
+
+  <script>
+    // Handle form submission
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      // You can add form validation logic here
+      
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const resume = document.getElementById('resume').files[0];
+
+      // Displaying data in console (you can replace this with actual form submission to server)
+      console.log('User Registered:');
+      console.log('First Name:', firstName);
+      console.log('Last Name:', lastName);
+      console.log('Email:', email);
+      console.log('Password:', password);
+      console.log('Resume:', resume ? resume.name : 'No file selected');
+
+      // After registration, clear the form (optional)
+      document.getElementById('registerForm').reset();
+      alert('Registration successful!'); // You can replace this with a real success message
+    });
+  </script>
+</body>
+</html>
+
+
